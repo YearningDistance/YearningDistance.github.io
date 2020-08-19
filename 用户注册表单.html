@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>用户注册表单</title>
+    </head>
+    <body bgcolor="#ffe4c4" background="u=2020089733,86807406&fm=26&gp=0.jpg">
+        <!--
+            用户注册：
+                用户名
+                密码
+                确认密码
+                性别
+                兴趣爱好
+                学历
+                简介
+            form表单method属性：
+                get:采用get方式提交的时候，用户提交的信息会显示在浏览器的地址栏上
+                post: 采用post方式提交的时候，用户提交的信息不会显示在浏览器地址栏上
+                当用户提交的信息中含有敏感信息 例如：密码 建议采用post方式提交
+                不写method属性 默认为get
+        -->
+        <form action="http://192.168.119.129:8080" method="post">
+            用户名<input type="text" name="username"/>
+            <br>
+            密码<input type="password" name="userpwd"/>
+            <br>
+            确认密码<input type="password"/>
+            <br>
+            性别
+            <input type="radio" name="gender" value="boy" checked/>男 <!--默认选中-->
+            <input type="radio" name="gender" value="girl"/>女
+            <br>
+            兴趣爱好
+            <input type="checkbox" name="interest" value="book"/>读书
+            <input type="checkbox" name="interest" value="music"/>听歌
+            <input type="checkbox" name="interest" value="watchmovie"/>看电影
+            <br>
+            学历
+            <select name="grade">
+                <option value="gz">高中</option>>
+                <option value="dz">大专</option>
+                <option value="bk" selected>本科</option> <!--默认选中-->
+                <option value="ss">硕士</option>
+            </select>
+            <br>
+            简介<!--文本域没有value属性，用户填写的内容就是value-->
+            <textarea rows="10" cols="60" name="introduce"></textarea>
+            <br>
+            <input type="submit" value="注册"/>
+            <input type="reset" value="清空"/>
+        </form>
+    </body>
+</html>
